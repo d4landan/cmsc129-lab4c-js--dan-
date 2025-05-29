@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4C - Student Records</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            font-family: Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Student Records</h1>
+
+    <button onclick="time_now()">Show Current Date</button>
+    <p id="dateDisplay"></p>
+
+    <h2>Student Form</h2>
+    <form id="studentForm" onsubmit="event.preventDefault(); add_student();">
+        <label>Name: <input type="text" id="name" required></label><br>
+        <label>Age: <input type="number" id="age" required></label><br>
+        <label>Email: <input type="email" id="email" required></label><br>
+        <label>Course:
+            <select id="course">
+                <option value="BA Food Appreciation">BA Food Appreciation</option>
+                <option value="BA Applied Poetry of the Future">BA Applied Poetry of the Future</option>
+                <option value="BS Computer Repair Shop">BS Computer Repair Shop</option>
+                <option value="BS Video Gaming">BS Video Gaming</option>
+                <option value="BS Installing and Downloading">BS Installing and Downloading</option>
+            </select>
+        </label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage"></p>
+
+    <h2>Search Student</h2>
+    <input type="text" id="searchID" placeholder="Enter Student Number">
+    <button onclick="find_student()">Search Student</button>
+    <p id="searchResult"></p>
+
+    <h2>All Students</h2>
+    <button onclick="display_list()">Display All</button>
+    <div id="studentList"></div>
+
+    <script src="lab4c_scripts.js"></script>
+</body>
+</html>
